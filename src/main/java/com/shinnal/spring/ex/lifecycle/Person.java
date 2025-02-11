@@ -13,7 +13,6 @@ public class Person {
 	}
 	
 	// 메소드
-	
 	@Override
 	public String toString() {
 		return "이름 : " + name + " 나이 : " + age;

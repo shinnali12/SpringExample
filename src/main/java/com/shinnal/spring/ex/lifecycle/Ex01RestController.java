@@ -24,7 +24,7 @@ public class Ex01RestController {
 	
 	
 	// status code 직접 설정
-	@RequestMapping("4")
+	@RequestMapping("/4")
 	public ResponseEntity<Person> entityResponse() {
 		Person me = new Person("김인규", 32);
 		
