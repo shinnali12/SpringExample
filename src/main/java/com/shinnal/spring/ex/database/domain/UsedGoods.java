@@ -2,7 +2,7 @@ package com.shinnal.spring.ex.database.domain;
 
 import java.time.LocalDateTime;
 
-// Domin, Entity class
+// Domain, Entity class
 public class UsedGoods {
 	
 	// used_goods 테이블의 컬럼 이름과 정확히 일치하는 멤버변수를 가진 클래스
