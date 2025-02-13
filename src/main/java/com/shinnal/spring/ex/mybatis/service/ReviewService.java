@@ -12,11 +12,11 @@ public class ReviewService {
 	@Autowired
 	private ReviewRepository reviewRepository;
 	
-	// id가 5인 리뷰정보 얻어오기
-	public Review getReview() {
-		 // new_review 테이블에서 id가 5인 행 조회 -> repository에서 조회
-		
-		Review review = reviewRepository.selectReview(5);
+	// 전달 받은 id와 일치하는 리뷰정보 얻어오기
+	public Review getReview(int id) {
+
+		// new_review 테이블에서 전달한 id와 일치하는 행 조회 -> repository에서 조회
+		Review review = reviewRepository.selectReview(id);
 		
 		return review;
 	}
