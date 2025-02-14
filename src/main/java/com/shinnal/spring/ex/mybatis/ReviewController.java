@@ -36,7 +36,7 @@ public class ReviewController {
 	@RequestMapping("/create")
 	public String createReview() {
 		
-		// 4, 치즈피자, 김인규, 4.5, 치즈피자 존맛!
+		// 4, 치즈피자, 김인규, 4.5, 치즈피자 존맛! parameter로 정보 전달받아 저장!!!
 //		int count = reviewService.addReview(4, "치즈피자", "김인규", 4.5, "치즈피자 존맛!");
 	
 		// 2, 뿌링클, 김인규, 4.0, 역시 뿌링클은 진리입니다!!
