@@ -10,7 +10,7 @@ public class User {
 	private String email;
 	private String introduce;
 	private LocalDateTime createdAt;
-	private LocalDateTime updatedAt;
+	private LocalDateTime updateAt; // uqdatedAt인지 확인하기!!!
 	
 	
 	
@@ -51,10 +51,10 @@ public class User {
 		this.createdAt = createdAt;
 	}
 	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
+		return updateAt;
 	}
 	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
+		this.updateAt = updatedAt;
 	}
 	
 	
