@@ -1,6 +1,9 @@
 package com.shinnal.spring.ex.thymeleaf;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,6 +58,27 @@ public class ThymeleafController {
 		
 		return "thymeleaf/ex02";
 	}
+	
+	
+	@GetMapping("/ex03")
+	public String ex03(Model model) {
+		
+		Date date = new Date();
+		
+		LocalDate localDate = LocalDate.now();
+		
+		LocalDateTime localDateTime = LocalDateTime.now(); // 객체 생성 없이 사용 가능한 스태틱 메소드임!!
+		
+		model.addAttribute("date", date);
+		model.addAttribute("LocalDate", localDate);
+		model.addAttribute("LocalDateTime", localDateTime);
+		
+		
+		
+		return "thymeleaf/ex03";
+		
+	}
+	
 	
 	
 }
