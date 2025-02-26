@@ -46,7 +46,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/ajax/user/create"
-					, date:{"name":name, "birthday":birthday, "email":email, "introduce":introduce}
+					, data:{"name":name, "birthday":birthday, "email":email, "introduce":introduce}
 					, success:function(response) {
 						// 성공 {"result":"success"}
 						// 실패 {"result":"fail"}

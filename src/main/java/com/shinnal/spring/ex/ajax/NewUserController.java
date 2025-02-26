@@ -23,7 +23,8 @@ public class NewUserController {
 	// 사용자 추가 API
 	@ResponseBody
 	@PostMapping("/create")	
-	public Map<String, String> createUser(@RequestParam("name") String name
+	public Map<String, String> createUser(
+			@RequestParam("name") String name
 			, @RequestParam("birthday") String birthday
 			, @RequestParam("email") String email
 			, @RequestParam("introduce") String introduce) {
