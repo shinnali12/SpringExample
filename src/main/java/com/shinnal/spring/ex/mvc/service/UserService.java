@@ -36,11 +36,30 @@ public class UserService {
 	
 	
 	// 가장 최근에 등록된 사용자 정보 얻어오기
-	public User  getLastUser() {
+	public User getLastUser() {
 		User user = userRepository.selectLastUser();
 		
 		return user;
 	}	
+	
+	// 이메일을 전달 받고 중복 여부를 확인하는 기능
+	
+	public boolean isDuplicateEmail(String email) {
+		int count = userRepository.selectCountByEmail(email);
+		
+		if(count == 0) {  // if(count >= 1) { return true;
+			return false;
+		} else {
+			return true;
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 }
