@@ -1,5 +1,8 @@
 package com.shinnal.spring.ex.jpa;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shinnal.spring.ex.jpa.domain.Student;
+import com.shinnal.spring.ex.jpa.repository.StudentRepository;
 import com.shinnal.spring.ex.jpa.service.StudentService;
 
 @RequestMapping("/jpa/student")
@@ -16,6 +20,14 @@ public class StudentController {
 	
 	@Autowired
 	StudentService studentService;
+	
+	// 경고!!
+	// 절대 Controller에서 Repository를 직접 사용하면 안됨!!
+	// 단, 예제 진행 편의를 위해 사용하는 것!
+	
+	@Autowired
+	private StudentRepository studentRepository;
+	
 	
 	@ResponseBody
 	@GetMapping("/create")
@@ -48,6 +60,32 @@ public class StudentController {
 		
 	}
 	
+	@ResponseBody
+	@GetMapping("/find")
+	public List<Student> findStudent() {
+		
+		List<Student> studentList = null;
+		// 모든 행 조회
+//		List<Student> studentList = studentRepository.findAll(); // 모든 리스트 조회
+//		studentList = studentRepository.findAllByOrderByIdDesc(); // 내림차순으로 모든 리스트 조회
+//		studentList = studentRepository.findTop2ByOrderByIdDesc(); // 위에서 두개만 조회
+//		studentList = studentRepository.findByName("김인규"); // 전달받은 이름 조회
+		
+//		List<String> nameList = new ArrayList<>(); // 전달받은 이름들(리스트) 조회
+//		nameList.add("김인규");
+//		nameList.add("유재석");
+//		
+//		studentList = studentRepository.findByNameIn(nameList);
+		
+//		studentList = studentRepository.findByEmailContaining("naver"); // 파라미터 단어가 포함된 리스트 조회
+		
+//		studentList = studentRepository.findByIdBetweenOrderByIdDesc(2, 4); // 원하는 id 사이에 있는 리스트 조회
+		
+		studentList = studentRepository.selectByDreamJob("개발자"); // 쿼리 작성해서 원하는 변수가 포함된 리스트 조회
+			
+		return studentList;
+		
+	}
 	
 	
 	@ResponseBody
